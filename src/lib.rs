@@ -27,6 +27,11 @@ impl<O, F: Future<Output = O>> MaybeFuture<O, F> {
     pub fn inner_mut(&mut self) -> &mut Option<F> {
         &mut self.inner
     }
+
+    pub fn reset(self: Pin<&mut Self>, value: Option<F>) {
+        let mut this = self.project();
+        this.inner.set(value);
+    }
 }
 
 impl<O, F: Future<Output = O>> Future for MaybeFuture<O, F> {
