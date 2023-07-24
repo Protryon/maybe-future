@@ -1,0 +1,12 @@
+[package]
+name = "maybe-future"
+version = "0.1.0"
+edition = "2021"
+authors = ["Protryon <max.bruce12@gmail.com>"]
+license = "Apache-2.0"
+repository = "https://github.com/protryon/maybe-future"
+description = "Future that can be None"
+keywords = [ "future", "futures", "option", "async" ]
+
+[dependencies]
+pin-project-lite = "0.2"
